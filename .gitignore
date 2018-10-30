@@ -1,0 +1,15 @@
+# Vagrant-created files/folders
+.vagrant/
+
+test.sh
+
+# The custom settings file
+conf/settings.yml
+conf/SETTINGS.yml
+
+# The custom httpd.conf file
+conf/apache2/000-default.conf
+conf/apache2/default-ssl.conf
+
+# Logs that get created
+*.log

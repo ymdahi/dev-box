@@ -1,0 +1,68 @@
+# | SETTINGS
+# NOTE: You should not be editing SETTINGS.tpl.yml directly.
+# Instead, make a copy called of SETTINGS.tpl.yml called
+# settings.yml and use that file to alter the Vagrantfile and the provision.sh
+# script. Refer to the readme.md for more details.
+
+# | SERVER
+# Configure the server parameters.
+server:
+  name: changeme
+  hostname: ubuntu.local
+  box: ubuntu/xenial64
+  ram: 1024
+  cpus: 2
+  ports:
+    - guest: 80
+      host: 8080
+      auto_correct: true
+
+# | SYNCED FOLDERS
+# Configure how folders will be synced from host->guest.
+synced_folders:
+  - src: public_html
+    dest: /var/www/html
+  - src: conf/apache
+    dest: /etc/apache2/sites-available
+    options:
+      :owner: root
+      :group: root
+
+# | PROVISION
+# Manage the provisioning script here.
+provision:
+  skip_os_update: "false"
+  skip_os_clean: "false"
+  tools: 
+    install: "true"
+    packages: curl wget git nano zip unzip
+  apache:
+    install: "true"
+  mysql:
+    install: "true"
+    root_pw: "root"
+    db_user: "dev"
+    db_pw: "pass"
+    copy_mycnf: "true"
+  php:
+    install: "true"
+    versions_to_install: 5.6 7.2
+    default_version: 7.2
+    install_composer: "true"
+    install_drush: "true"
+
+# | APPLICATION
+# Manage the application install and config scripts here.
+applications:
+  drupal7:
+    install: "false"
+    db_name: "drupal7"
+    folder: "drupal7"
+  drupal8:
+    install: "false"
+    db_name: "drupal8"
+    folder: "drupal8"
+  wordpress:
+    install: "false"
+    db_name: "wordpress"
+    folder: "wordpress"
