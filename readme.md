@@ -49,4 +49,4 @@ Look at the `conf/scripts/` folder for additional scriptings, including scripts 
 * install composer
 * install drush
 * install drupal
-* install wordpress
+* install wordpress (coming soon)
