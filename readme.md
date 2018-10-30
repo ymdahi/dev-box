@@ -40,3 +40,13 @@ Use this repo to build a VM using Vagrant. The VM specifications are managed usi
 * You switch between versions with: `update-alternatives --set php /usr/bin/phpXX`, where XX is the version you want to switch to.
 * The following PHP modules are also installed for each version:
   * `php-curl php-dev php-gd php-mbstring php-zip php-mysql php-xml php-json`
+
+#### Additional Scripts
+
+Look at the `conf/scripts/` folder for additional scriptings, including scripts that will:
+
+* import databases
+* install composer
+* install drush
+* install drupal
+* install wordpress
