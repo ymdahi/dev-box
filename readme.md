@@ -30,3 +30,13 @@ Use this repo to build a VM using Vagrant. The VM specifications are managed usi
 #### Defaults
 - Webroot from host: http://localhost:*hostport*
 - DB root user password: root
+
+
+#### PHP
+
+* Both PHP 5.6 and PHP 7.2 are installed at /user/bin/php[version].
+* PHP 7.2 is the default
+* You can view php version with `update-alternatives --list php`
+* You switch between versions with: `update-alternatives --set php /usr/bin/phpXX`, where XX is the version you want to switch to.
+* The following PHP modules are also installed for each version:
+  * `php-curl php-dev php-gd php-mbstring php-zip php-mysql php-xml php-json`
